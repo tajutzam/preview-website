@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DASHBOARD PENJUALAN</title>
+
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="container-scroller d-flex">
+
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+
+                <li class="nav-item sidebar-category">
+                    <p>DASHBOARD PENJUALAN</p>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">
+                        <i class="mdi mdi-view-dashboard menu-icon"></i>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="nav-item sidebar-category">
+                    <p>Perencanaan & Produksi</p>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="produksi-penjualan.html">
+                        <i class="mdi mdi-factory menu-icon"></i>
+                        <span class="menu-title">Produksi & Penjualan</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="balansitas.html">
+                        <i class="mdi mdi-scale-balance menu-icon"></i>
+                        <span class="menu-title">Balansitas</span>
+                    </a>
+                </li>
+
+                <li class="nav-item sidebar-category">
+                    <p>Biaya Produksi</p>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cogm.html">
+                        <i class="mdi mdi-calculator-variant menu-icon"></i>
+                        <span class="menu-title">COGM</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cogs.html">
+                        <i class="mdi mdi-cash-multiple menu-icon"></i>
+                        <span class="menu-title">COGS</span>
+                    </a>
+                </li>
+
+                <li class="nav-item sidebar-category">
+                    <p>Utilitas</p>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="import-excel.html">
+                        <i class="mdi mdi-file-excel menu-icon"></i>
+                        <span class="menu-title">Import Excel</span>
+                    </a>
+                </li>
+
+               
+
+            </ul>
+        </nav>
+
+
+        <div class="container-fluid page-body-wrapper">
+
+            <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
+                <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
+                        data-toggle="minimize">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+
+                    <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1 ml-2">
+                        Welcome back,
+                        <span id="username">User</span>
+                    </h4>
+
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item">
+                            <h4 class="mb-0 font-weight-bold d-none d-xl-block" id="currentDate"></h4>
+                        </li>
+                    </ul>
+
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                        data-toggle="offcanvas">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+
+                <div class="navbar-menu-wrapper navbar-search-wrapper d-none d-lg-flex align-items-center">
+                    <ul class="navbar-nav mr-lg-2"></ul>
+
+                    <ul class="navbar-nav navbar-nav-right">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle position-relative" href="#" data-toggle="dropdown"
+                                id="notificationDropdown">
+                                <i class="fa-regular fa-bell text-dark" style="font-size:22px;"></i>
+                                <span id="notifBadge" class="badge badge-danger badge-pill position-absolute d-none"
+                                    style="top:5px; right:5px;">
+                                    0
+                                </span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                                style="width:auto; max-height:400px; overflow-y:auto;">
+                                <h6 class="dropdown-header"></h6>
+
+                                <div id="notificationList">
+                                    <div class="dropdown-item text-center text-muted">
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item nav-profile dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                <i class="mdi mdi-account-circle text-secondary" style="font-size:30px"></i>
+                                <span class="nav-profile-name" id="profileName">User</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown">
+                                <a href="profile.html" class="dropdown-item">
+                                    <i class="mdi mdi-settings text-primary"></i>
+                                    Settings
+                                </a>
+
+                                <a href="#" id="logoutBtn" class="dropdown-item">
+                                    <i class="mdi mdi-logout text-danger"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+
+                    <!-- TITLE -->
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <h4 class="font-weight-bold">Produksi & Penjualan</h4>
+                            <p class="text-muted mb-0">Data per bulan (Ton)</p>
+                        </div>
+                    </div>
+
+                    <!-- PRODUKSI -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="font-weight-bold mb-3">Produksi</h5>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-sm text-nowrap">
+                                            <thead class="thead-light text-center">
+                                                <tr>
+                                                    <th>Kategori</th>
+                                                    <th>Produk</th>
+                                                    <th>JAN</th>
+                                                    <th>FEB</th>
+                                                    <th>MAR</th>
+                                                    <th>APR</th>
+                                                    <th>MAY</th>
+                                                    <th>JUN</th>
+                                                    <th>JUL</th>
+                                                    <th>AUG</th>
+                                                    <th>SEP</th>
+                                                    <th>OCT</th>
+                                                    <th>NOV</th>
+                                                    <th>DEC</th>
+                                                    <th>TOTAL</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td rowspan="4"><b>KIA</b></td>
+                                                    <td>Listrik KIA</td>
+                                                    <td>1.650</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td><b>123.871</b></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Air Bersih / Soft Water</td>
+                                                    <td>177.777</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td>11.111</td>
+                                                    <td><b>299.998</b></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Potable Water</td>
+                                                    <td>88.888</td>
+                                                    <td colspan="11" class="text-center">11.111</td>
+                                                    <td><b>211.109</b></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Urea PRL NS CRH</td>
+                                                    <td>63.763.389</td>
+                                                    <td colspan="11" class="text-center">11.111</td>
+                                                    <td><b>63.885.610</b></td>
+                                                </tr>
+
+                                                <tr class="table-secondary">
+                                                    <td colspan="15" class="text-center font-weight-bold">
+                                                        KIB / NPK / Bagging (tidak ada data produksi)
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PENJUALAN -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="font-weight-bold mb-3">Penjualan</h5>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-sm text-nowrap">
+                                            <thead class="thead-light text-center">
+                                                <tr>
+                                                    <th>Kategori</th>
+                                                    <th>Jenis</th>
+                                                    <th>JAN</th>
+                                                    <th>FEB</th>
+                                                    <th>MAR</th>
+                                                    <th>APR</th>
+                                                    <th>MAY</th>
+                                                    <th>JUN</th>
+                                                    <th>JUL</th>
+                                                    <th>AUG</th>
+                                                    <th>SEP</th>
+                                                    <th>OCT</th>
+                                                    <th>NOV</th>
+                                                    <th>DEC</th>
+                                                    <th>TOTAL</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td rowspan="3"><b>AMMONIA</b></td>
+                                                    <td>Ekspor</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>13</td>
+                                                    <td>13</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>13</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>13</td>
+                                                    <td>-</td>
+                                                    <td>13</td>
+                                                    <td><b>64,94</b></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Lokal</td>
+                                                    <td colspan="12" class="text-center">11.111</td>
+                                                    <td><b>11.111</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Aqueos</td>
+                                                    <td colspan="12" class="text-center">11.111</td>
+                                                    <td><b>133.332</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="4"><b>UREA</b></td>
+                                                    <td>Subsidi</td>
+                                                    <td colspan="12" class="text-center">11.111</td>
+                                                    <td><b>133.332</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Non Subsidi (Kebun)</td>
+                                                    <td colspan="12" class="text-center">11.111</td>
+                                                    <td><b>133.332</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ekspor</td>
+                                                    <td colspan="12" class="text-center">11.111</td>
+                                                    <td><b>133.332</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nitrea</td>
+                                                    <td colspan="12" class="text-center">11.111</td>
+                                                    <td><b>133.332</b></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <p>© 2025 DASHBOARD PENJUALAN</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                }
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>
