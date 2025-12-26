@@ -221,68 +221,207 @@
 
                                     <h5 class="font-weight-bold mb-3">Tabel Balansitas Bulanan</h5>
 
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-sm text-nowrap">
-                                            <thead class="thead-light text-center">
-                                                <tr>
-                                                    <th>Bulan</th>
-                                                    <th>Saldo Awal</th>
-                                                    <th>Produksi</th>
-                                                    <th>Penjualan</th>
-                                                    <th>Saldo Akhir</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
 
-                                                <tr>
-                                                    <td>Januari</td>
-                                                    <td>10.000</td>
-                                                    <td>15.000</td>
-                                                    <td>12.000</td>
-                                                    <td>13.000</td>
-                                                    <td class="text-success font-weight-bold">Surplus</td>
-                                                </tr>
+                                                    <h5 class="font-weight-bold mb-3">
+                                                        Detail Balansitas – Listrik KIA
+                                                    </h5>
 
-                                                <tr>
-                                                    <td>Februari</td>
-                                                    <td>13.000</td>
-                                                    <td>14.000</td>
-                                                    <td>15.000</td>
-                                                    <td>12.000</td>
-                                                    <td class="text-danger font-weight-bold">Defisit</td>
-                                                </tr>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-sm text-nowrap">
+                                                            <thead class="thead-light text-center">
+                                                                <tr>
+                                                                    <th>Keterangan</th>
+                                                                    <th>Jan</th>
+                                                                    <th>Feb</th>
+                                                                    <th>Mar</th>
+                                                                    <th>Apr</th>
+                                                                    <th>Mei</th>
+                                                                    <th>Jun</th>
+                                                                    <th>Jul</th>
+                                                                    <th>Agust</th>
+                                                                    <th>Sep</th>
+                                                                    <th>Okt</th>
+                                                                    <th>Nop</th>
+                                                                    <th>Des</th>
+                                                                    <th>Total</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
 
-                                                <tr>
-                                                    <td>Maret</td>
-                                                    <td>12.000</td>
-                                                    <td>16.000</td>
-                                                    <td>14.000</td>
-                                                    <td>14.000</td>
-                                                    <td class="text-success font-weight-bold">Surplus</td>
-                                                </tr>
+                                                                <!-- SALDO AWAL -->
+                                                                <tr class="table-secondary font-weight-bold">
+                                                                    <td colspan="14">SALDO AWAL</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Beg Balance</td>
+                                                                    <td>(112.867)</td>
+                                                                    <td>(3.368.411)</td>
+                                                                    <td>(6.623.955)</td>
+                                                                    <td>(9.879.499)</td>
+                                                                    <td>(13.135.043)</td>
+                                                                    <td>(16.390.587)</td>
+                                                                    <td>(19.646.131)</td>
+                                                                    <td>(22.901.675)</td>
+                                                                    <td>(26.157.219)</td>
+                                                                    <td>(29.412.763)</td>
+                                                                    <td>(32.668.307)</td>
+                                                                    <td>-</td>
+                                                                    <td>-</td>
+                                                                </tr>
 
-                                                <tr class="table-secondary font-weight-bold">
-                                                    <td>TOTAL</td>
-                                                    <td>-</td>
-                                                    <td>45.000</td>
-                                                    <td>41.000</td>
-                                                    <td>14.000</td>
-                                                    <td>-</td>
-                                                </tr>
+                                                                <!-- PRODUKSI -->
+                                                                <tr class="table-secondary font-weight-bold">
+                                                                    <td colspan="14">PRODUKSI</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Production</td>
+                                                                    <td>1.650</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>11.111</td>
+                                                                    <td>123.871</td>
+                                                                </tr>
 
-                                            </tbody>
-                                        </table>
+                                                                <!-- AVAILABLE BALANCE -->
+                                                                <tr class="table-secondary font-weight-bold">
+                                                                    <td colspan="14">AVAILABLE BALANCE</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Available Balance</td>
+                                                                    <td>1.650</td>
+                                                                    <td>(101.756)</td>
+                                                                    <td>(3.357.300)</td>
+                                                                    <td>(6.612.844)</td>
+                                                                    <td>(9.868.388)</td>
+                                                                    <td>(13.123.932)</td>
+                                                                    <td>(16.379.476)</td>
+                                                                    <td>(19.635.020)</td>
+                                                                    <td>(22.890.564)</td>
+                                                                    <td>(26.146.108)</td>
+                                                                    <td>(29.401.652)</td>
+                                                                    <td>(32.657.196)</td>
+                                                                    <td>123.871</td>
+                                                                </tr>
+
+                                                                <!-- KONSUMSI -->
+                                                                <tr class="table-secondary font-weight-bold">
+                                                                    <td colspan="14">PENGGUNAAN (USING FOR)</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>Air Bersih / Soft Water</td>
+                                                                    <td>900</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>1.712.005</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>Air Demin</td>
+                                                                    <td>700</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>1.711.805</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>Selling</td>
+                                                                    <td>17.777</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>155.555</td>
+                                                                    <td>1.728.882</td>
+                                                                </tr>
+
+                                                                <!-- TOTAL KONSUMSI -->
+                                                                <tr class="table-success font-weight-bold">
+                                                                    <td>Total Consumption</td>
+                                                                    <td>114.517</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>3.266.655</td>
+                                                                    <td>36.047.722</td>
+                                                                </tr>
+
+                                                                <!-- SALDO AKHIR -->
+                                                                <tr class="table-danger font-weight-bold">
+                                                                    <td>Ending Balance</td>
+                                                                    <td>(112.867)</td>
+                                                                    <td>(3.368.411)</td>
+                                                                    <td>(6.623.955)</td>
+                                                                    <td>(9.879.499)</td>
+                                                                    <td>(13.135.043)</td>
+                                                                    <td>(16.390.587)</td>
+                                                                    <td>(19.646.131)</td>
+                                                                    <td>(22.901.675)</td>
+                                                                    <td>(26.157.219)</td>
+                                                                    <td>(29.412.763)</td>
+                                                                    <td>(32.668.307)</td>
+                                                                    <td>(35.923.851)</td>
+                                                                    <td>(35.923.851)</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
 
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
                 <footer>
                     <p>© 2025 DASHBOARD PENJUALAN</p>
                 </footer>
